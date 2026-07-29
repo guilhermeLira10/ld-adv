@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(npm install -D vitest; \"exit: $LASTEXITCODE\")",
+      "PowerShell(npx vitest run 2>&1)",
+      "PowerShell(npm run lint; \"lint: $LASTEXITCODE\"; npm run test 2>&1 | Select-Object -Last 6; npm run build 2>&1 | Select-Object -Last 8)",
+      "PowerShell(npm run lint; \"lint: $LASTEXITCODE\"; npm run test 2>&1 | Select-Object -Last 5; npm run build 2>&1 | Select-Object -Last 7)",
+      "PowerShell(npm run lint; \"lint: $LASTEXITCODE\"; npm run test 2>&1 | Select-Object -Last 4; npm run build 2>&1 | Select-Object -Last 6)",
+      "Bash(npm -v)",
+      "Bash(npx eslint *)",
+      "Bash(npm run *)"
+    ]
+  }
+}

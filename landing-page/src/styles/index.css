@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+
+/*
+  Design tokens do escritório. Tailwind v4 gera as utilities a partir daqui:
+  --color-navy-800 vira bg-navy-800, text-navy-800, border-navy-800 etc.
+
+  A escala navy é derivada do azul-petróleo institucional #0b1c2d (navy-900,
+  fundo base) e do #1f3a56 (navy-700, superfície de seções alternadas e cards).
+*/
+@theme {
+  /* Institucional — sobriedade e confiança */
+  --color-navy-50: #f3f7fb;
+  --color-navy-100: #e2eaf2;
+  --color-navy-200: #c3d2e0;
+  --color-navy-300: #9db4cc;
+  --color-navy-400: #6b8cae;
+  --color-navy-500: #3e6488;
+  --color-navy-600: #2c4c6d;
+  --color-navy-700: #1f3a56;
+  --color-navy-800: #142b42;
+  --color-navy-900: #0b1c2d;
+  --color-navy-950: #071522;
+
+  /* Acento — dourado sóbrio, evita o tom "premium" exagerado.
+     É ele, e não o verde, que marca os CTAs primários: o verde do WhatsApp
+     fica reservado ao botão flutuante, para não competir com a identidade. */
+  --color-gold-50: #fbf7ef;
+  --color-gold-100: #f5ebd6;
+  --color-gold-200: #e9d4a8;
+  --color-gold-300: #dbb974;
+  --color-gold-400: #cfa04f;
+  --color-gold-500: #b8894a;
+  --color-gold-600: #9a6f3a;
+  --color-gold-700: #7b562f;
+  --color-gold-800: #5c402a;
+  --color-gold-900: #3e2c1f;
+
+  /* Verde oficial do WhatsApp — uso exclusivo do canal. */
+  --color-whatsapp: #128c3f;
+  --color-whatsapp-dark: #0e7434;
+
+  --font-sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
+
+  /* Largura de leitura das seções */
+  --container-content: 72rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Compensa o header sticky: sem isso a âncora para atrás da barra. */
+    scroll-padding-top: 5.5rem;
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-navy-900 font-sans text-navy-200 antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-serif font-semibold text-white;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-gold-300;
+  }
+
+  ::selection {
+    @apply bg-gold-400 text-navy-950;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
