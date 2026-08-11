@@ -16,11 +16,11 @@ export function CtaSection() {
         <h2 className="text-3xl sm:text-4xl">Precisa de orientação jurídica?</h2>
 
         <p className="mx-auto mt-4 max-w-2xl text-lg text-navy-200">
-          Entre em contato e receba um atendimento profissional e responsável. Sua
-          mensagem é tratada com sigilo e respondida em horário comercial.
+          Entre em contato para receber uma análise inicial do seu caso. Sua mensagem
+          é tratada com sigilo e respondida em horário comercial.
         </p>
 
-        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:items-center">
+        <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center">
           <WhatsappButton size="lg" className="max-sm:w-full">
             Atendimento via WhatsApp
           </WhatsappButton>
@@ -33,7 +33,7 @@ export function CtaSection() {
               className: 'max-sm:w-full',
             })}
           >
-            Enviar meu caso pelo formulário
+            Enviar pelo formulário
           </a>
         </div>
       </div>

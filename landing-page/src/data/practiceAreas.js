@@ -12,14 +12,16 @@ export const practiceGroups = [
     id: 'bancario',
     icon: 'bank',
     label: 'Bancos e crédito',
+    /* Descrição aberta pelo termo que o visitante reconhece primeiro
+       ("fraude bancária"), não pelo caso mais genérico. */
     description:
-      'Cobranças que você não reconhece, descontos indevidos, fraudes na sua conta e nome inscrito no SPC ou no Serasa sem motivo.',
+      'Fraude bancária, descontos indevidos, negativação indevida e cobranças abusivas — inclusive nome inscrito no SPC ou no Serasa sem motivo.',
     items: [
-      { id: 'consignado', label: 'Empréstimo consignado' },
-      { id: 'golpe-bancario', label: 'Golpe bancário' },
       { id: 'fraude-bancaria', label: 'Fraude bancária' },
+      { id: 'golpe-bancario', label: 'Golpe bancário' },
       { id: 'negativacao-indevida', label: 'Negativação indevida' },
       { id: 'cobrancas-indevidas', label: 'Cobranças indevidas ou abusivas' },
+      { id: 'consignado', label: 'Empréstimo consignado' },
     ],
   },
   {
@@ -27,7 +29,7 @@ export const practiceGroups = [
     icon: 'document',
     label: 'Compras e contratos',
     description:
-      'Produto ou serviço que não chegou, veio com defeito ou não foi entregue como combinado.',
+      'Produto ou serviço que não chegou, apresentou defeito ou não foi entregue como combinado.',
     items: [
       { id: 'compras-internet', label: 'Compras pela internet' },
       { id: 'produtos-defeituosos', label: 'Produto defeituoso ou não entregue' },
@@ -36,15 +38,30 @@ export const practiceGroups = [
       { id: 'multa-contratual', label: 'Multa contratual' },
     ],
   },
+  /* Plano de saúde e garantia contratual são assuntos distintos — legislação,
+     urgência e estratégia diferentes. Ficavam num único card e pareciam mistura. */
   {
-    id: 'saude',
-    icon: 'shield',
-    label: 'Saúde e garantias',
+    id: 'plano-saude',
+    icon: 'heart',
+    label: 'Planos de saúde',
     description:
-      'Negativa de cobertura pelo plano e recusa de garantia contratada.',
+      'Negativa de cobertura, reajuste abusivo, atendimento de urgência e autorização de tratamentos.',
     items: [
-      { id: 'plano-de-saude', label: 'Plano de saúde' },
-      { id: 'garantia-veicular', label: 'Problemas com garantia veicular' },
+      { id: 'negativa-cobertura', label: 'Negativa de cobertura pelo plano' },
+      { id: 'reajuste-abusivo', label: 'Reajuste abusivo de mensalidade' },
+      { id: 'urgencia-emergencia', label: 'Urgência ou emergência negada' },
+      { id: 'tratamento-negado', label: 'Tratamento ou cirurgia negados' },
+    ],
+  },
+  {
+    id: 'garantias',
+    icon: 'shield',
+    label: 'Garantias',
+    description:
+      'Recusa ou limitação indevida de garantia contratual e de garantia veicular.',
+    items: [
+      { id: 'garantia-contratual', label: 'Garantia contratual' },
+      { id: 'garantia-veicular', label: 'Garantia veicular' },
     ],
   },
   {
@@ -66,8 +83,19 @@ export const practiceGroups = [
     icon: 'scale',
     label: 'Família e civil',
     description:
-      'Conflitos entre particulares e questões de direito de família.',
-    items: [{ id: 'divorcio', label: 'Divórcio' }],
+      'Divórcio, partilha de bens, união estável e conflitos entre particulares envolvendo cobranças, danos e indenizações.',
+    items: [
+      { id: 'divorcio-consensual', label: 'Divórcio consensual' },
+      { id: 'divorcio-litigioso', label: 'Divórcio litigioso' },
+      { id: 'partilha-bens', label: 'Partilha de bens' },
+      {
+        id: 'uniao-estavel',
+        label: 'União estável (reconhecimento ou dissolução)',
+      },
+      { id: 'cobrancas', label: 'Cobranças' },
+      { id: 'responsabilidade-civil', label: 'Responsabilidade civil' },
+      { id: 'indenizacoes', label: 'Indenizações' },
+    ],
   },
 ]
 

@@ -8,7 +8,7 @@ export function PracticeAreasSection() {
       id="atuacao"
       eyebrow="Atuação"
       title="Em que podemos ajudar"
-      description="Casos atendidos com mais frequência, em situações de abuso, falha na prestação de serviços e descumprimento do contrato ou da legislação. Se o seu não estiver na lista, envie sua dúvida — avaliamos igualmente."
+      description="Principais áreas de atuação, em situações de abuso, falha na prestação de serviços e descumprimento do contrato ou da legislação. Se o seu caso não estiver na lista, envie sua dúvida — avaliamos igualmente."
     >
       <div className="grid gap-8 lg:grid-cols-2">
         {practiceGroups.map((group) => (

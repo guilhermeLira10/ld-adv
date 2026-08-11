@@ -18,7 +18,7 @@ export const leadSchema = z.object({
     .trim()
     .regex(PHONE_RE, 'Telefone inválido. Use (11) 91234-5678.'),
 
-  area: z.enum(practiceAreas, 'Selecione a área do seu caso.'),
+  area: z.enum(practiceAreas, 'Selecione o assunto do seu caso.'),
 
   message: z
     .string()

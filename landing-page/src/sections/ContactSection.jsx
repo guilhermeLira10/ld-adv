@@ -16,8 +16,8 @@ export function ContactSection() {
           <div className="rounded-lg border border-white/10 bg-navy-800/60 p-6">
             <h3 className="text-lg">Atendimento direto</h3>
             <p className="mt-2 text-sm text-navy-200">
-              Mande uma mensagem com um resumo do que aconteceu. O retorno é feito em
-              horário comercial.
+              Envie um breve resumo do ocorrido para que possamos realizar uma
+              análise inicial. O retorno é feito em horário comercial.
             </p>
 
             <WhatsappButton className="mt-5 w-full justify-center">

@@ -4,6 +4,9 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { leadSchema, leadDefaultValues } from '../schemas/leadSchema'
 import { submitLead } from '../services/leadService'
 
+const GENERIC_SUBMIT_ERROR =
+  'Não foi possível enviar sua mensagem agora. Tente novamente ou fale conosco pelo WhatsApp.'
+
 /**
  * Encapsula validação + envio do lead.
  * status: 'idle' | 'success' | 'error' — `isSubmitting` vem do react-hook-form.
@@ -26,9 +29,9 @@ export function useLeadForm() {
       await submitLead(values)
       setStatus('success')
       form.reset()
-    } catch (error) {
+    } catch {
       setStatus('error')
-      setErrorMessage(error.message)
+      setErrorMessage(GENERIC_SUBMIT_ERROR)
     }
   })
 

@@ -197,15 +197,13 @@ LeadForm  →  useLeadForm  →  zodResolver(leadSchema)  →  submitLead  →  
 
 ### Configuração do envio
 
-O volume esperado é baixo (o WhatsApp absorve a maior parte), então um plano gratuito atende. O serviço é configurado por variável de ambiente — nenhum backend próprio para manter:
+O volume esperado é baixo (o WhatsApp absorve a maior parte), então um plano gratuito atende. O projeto usa **Web3Forms** por padrão, sem backend próprio:
 
-| Opção | Limite grátis | Variáveis |
+| Serviço | Limite grátis | Variáveis |
 | --- | --- | --- |
-| **Web3Forms** (recomendado) | 250 envios/mês | `VITE_LEAD_ENDPOINT=https://api.web3forms.com/submit` + `VITE_LEAD_ACCESS_KEY` |
-| Formspree | 50 envios/mês | `VITE_LEAD_ENDPOINT=https://formspree.io/f/<id>` |
-| Endpoint próprio | — | `VITE_LEAD_ENDPOINT=<sua-url>` |
+| **Web3Forms** | 250 envios/mês | `VITE_LEAD_ENDPOINT=https://api.web3forms.com/submit` + `VITE_LEAD_ACCESS_KEY` |
 
-`leadService.js` cobre os três: quando `VITE_LEAD_ACCESS_KEY` existe, ela é anexada ao corpo (formato Web3Forms), e a resposta `{ success: false }` é tratada como erro mesmo com HTTP 200. Sem `VITE_LEAD_ENDPOINT`, o formulário exibe erro de configuração em vez de falhar silenciosamente.
+`leadService.js` envia o payload direto para Web3Forms e trata `{ success: false }` como erro mesmo com HTTP 200. Se a access key não estiver configurada, o formulário mostra erro claro de configuração em vez de falhar silenciosamente.
 
 Payload enviado:
 

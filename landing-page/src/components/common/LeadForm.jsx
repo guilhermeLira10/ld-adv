@@ -80,7 +80,7 @@ export function LeadForm() {
         </Field>
       </div>
 
-      <Field label="Área do seu caso" name="area" error={errors.area?.message}>
+      <Field label="Assunto" name="area" error={errors.area?.message}>
         {(a11y) => (
           <select {...a11y} {...register('area')} className={controlClass}>
             <option value="">Selecione…</option>

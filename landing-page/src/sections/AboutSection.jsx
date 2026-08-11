@@ -2,6 +2,7 @@ import { Section } from '../components/layout/Section'
 import { Icon } from '../components/ui/Icon'
 import { Photo } from '../components/ui/Photo'
 import { site } from '../config/site'
+import advPrincipalImage from '../assets/adv-principal.webp'
 
 const facts = [
   { icon: 'check', term: 'Inscrição', value: site.oab },
@@ -14,7 +15,7 @@ export function AboutSection() {
     <Section id="sobre" tone="surface">
       <div className="grid items-center gap-12 md:grid-cols-2">
         <Photo
-          src="/images/advogada.jpg"
+          src={advPrincipalImage}
           alt={`${site.lawyer}, advogada — ${site.oab}`}
           monogram="N"
           ratio="aspect-square"
@@ -30,10 +31,10 @@ export function AboutSection() {
 
           {/* TODO: substituir pela bio revisada pela advogada. */}
           <p className="mt-5 text-lg text-navy-100">
-            Advogada com atuação em Direito do Consumidor e Direito Civil, focada na
-            defesa de quem enfrenta abusos, cobranças indevidas e falhas na prestação
-            de serviços. O atendimento é direto e sem juridiquês: você entende o que
-            está em jogo, quais são os prazos e o que esperar de cada caminho.
+            Advogada em {site.city}, com atuação voltada à defesa dos direitos dos
+            consumidores e à resolução de conflitos cíveis. O atendimento é direto e
+            sem juridiquês: você compreende seus direitos, os riscos envolvidos e as
+            alternativas jurídicas disponíveis, com os prazos de cada caminho.
           </p>
 
           <p className="mt-4 text-navy-200">

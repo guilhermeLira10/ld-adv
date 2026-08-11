@@ -3,6 +3,7 @@ import { WhatsappButton } from '../components/common/WhatsappButton'
 import { buttonClass } from '../components/ui/Button'
 import { Icon } from '../components/ui/Icon'
 import { Photo } from '../components/ui/Photo'
+import heroImage from '../assets/hero.webp'
 
 const trustMarkers = [
   { icon: 'check', label: site.oab },
@@ -19,18 +20,22 @@ export function HeroSection() {
             {site.tagline}
           </p>
 
+          {/* Formulação em pergunta, e não em afirmação: não pressupõe que o
+              visitante teve um direito violado (Provimento 205/2021 da OAB). */}
           <h1 className="text-4xl leading-tight sm:text-5xl">
-            Seu direito foi violado por uma empresa ou por um contrato?
+            Seu direito foi desrespeitado por uma empresa ou em uma relação
+            contratual?
           </h1>
 
           <p className="mt-6 text-lg text-navy-200">
-            Atendimento em Direito do Consumidor e Direito Civil: cobranças indevidas,
-            negativação, fraudes bancárias, planos de saúde, divórcio e conflitos
-            contratuais. Você recebe uma análise clara do seu caso e dos caminhos
-            possíveis antes de decidir qualquer coisa.
+            Advogada de Direito do Consumidor e Direito Civil em {site.city}:
+            cobranças indevidas, negativação indevida, fraude bancária, plano de
+            saúde, divórcio e conflitos contratuais. Você recebe uma análise jurídica
+            clara sobre seu caso, os direitos envolvidos e as alternativas possíveis
+            antes de decidir os próximos passos.
           </p>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <WhatsappButton size="lg" className="max-sm:w-full">
               Falar com a advogada
             </WhatsappButton>
@@ -43,7 +48,7 @@ export function HeroSection() {
                 className: 'max-sm:w-full',
               })}
             >
-              Enviar meu caso pelo formulário
+              Enviar pelo formulário
             </a>
           </div>
 
@@ -57,11 +62,11 @@ export function HeroSection() {
           </ul>
         </div>
 
-        {/* Decorativa: escondida no mobile para não empurrar o CTA para baixo da dobra. */}
+        {/* Ilustração da advocacia: escondida no mobile para não empurrar o CTA para baixo da dobra. */}
         <div className="hidden md:block">
           <Photo
-            src="/images/hero.jpg"
-            alt=""
+            src={heroImage}
+            alt="Balança e martelo sobre uma mesa, simbolizando advocacia, com uma janela desfocada ao fundo."
             monogram="N"
             priority
             ratio="aspect-[4/5]"

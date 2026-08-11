@@ -3,9 +3,8 @@ export const site = {
   oab: 'OAB/SP 466.797',
   tagline: 'Advocacia em Direito do Consumidor e Direito Civil',
 
-  // TODO: confirmar antes de publicar.
   phone: '(11) 98922-0051',
-  email: 'contato@exemplo.com.br',
+  email: 'nathieli@adv.oabsp.org.br',
   city: 'São Paulo/SP',
   url: 'https://exemplo.com.br',
 }

@@ -1,10 +1,11 @@
-const ENDPOINT = import.meta.env.VITE_LEAD_ENDPOINT
+const DEFAULT_ENDPOINT = 'https://api.web3forms.com/submit'
+const ENDPOINT = import.meta.env.VITE_LEAD_ENDPOINT || DEFAULT_ENDPOINT
 const ACCESS_KEY = import.meta.env.VITE_LEAD_ACCESS_KEY
 
 /**
- * Envia o lead por e-mail através do serviço configurado em .env.
- * Compatível com Web3Forms / Formspree / endpoint próprio: quando
- * VITE_LEAD_ACCESS_KEY existe, ela vai no corpo (formato Web3Forms).
+ * Envia o lead por e-mail usando Web3Forms por padrão, sem backend.
+ * O endpoint pode ser sobrescrito via .env, mas o fluxo principal é
+ * VITE_LEAD_ENDPOINT=https://api.web3forms.com/submit com uma access key.
  *
  * Lança Error com mensagem apresentável — a section trata o catch e
  * oferece o WhatsApp como alternativa.
@@ -16,19 +17,29 @@ export async function submitLead(lead) {
     )
   }
 
-  const payload = {
+  if (ENDPOINT === DEFAULT_ENDPOINT && !ACCESS_KEY) {
+    throw new Error(
+      'Serviço não configurado: defina VITE_LEAD_ACCESS_KEY no arquivo .env para usar o envio gratuito via Web3Forms.',
+    )
+  }
+
+  const payload = new FormData()
+
+  Object.entries({
     ...lead,
     submittedAt: new Date().toISOString(),
     subject: `Novo contato pelo site — ${lead.area}`,
-    ...(ACCESS_KEY && { access_key: ACCESS_KEY }),
-  }
+  }).forEach(([key, value]) => {
+    payload.append(key, String(value))
+  })
+
+  payload.append('access_key', ACCESS_KEY)
 
   let response
   try {
     response = await fetch(ENDPOINT, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(payload),
+      body: payload,
     })
   } catch {
     throw new Error('Falha de conexão. Verifique sua internet e tente novamente.')
