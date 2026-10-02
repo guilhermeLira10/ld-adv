@@ -33,7 +33,7 @@ export function Footer() {
               <WhatsappButton variant="ghost">WhatsApp</WhatsappButton>
             </li>
             <li className="flex items-center gap-2 text-navy-200">
-              <Icon name="phone" className="size-4 text-navy-400" />
+              <Icon name="phone" className="size-4 text-navy-300" />
               <a
                 href={`tel:+55${site.phone.replace(/\D/g, '')}`}
                 className="hover:text-gold-300"
@@ -42,13 +42,13 @@ export function Footer() {
               </a>
             </li>
             <li className="flex items-center gap-2 text-navy-200">
-              <Icon name="mail" className="size-4 text-navy-400" />
+              <Icon name="mail" className="size-4 text-navy-300" />
               <a href={`mailto:${site.email}`} className="hover:text-gold-300">
                 {site.email}
               </a>
             </li>
             <li className="flex items-center gap-2 text-navy-200">
-              <Icon name="pin" className="size-4 text-navy-400" />
+              <Icon name="pin" className="size-4 text-navy-300" />
               {site.city}
             </li>
           </ul>
@@ -56,7 +56,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10 px-5 py-6">
-        <p className="mx-auto max-w-content text-xs text-navy-400">
+        <p className="mx-auto max-w-content text-xs text-navy-300">
           Este site tem caráter meramente informativo, em conformidade com o Código de
           Ética e Disciplina da OAB e o Provimento 205/2021. Não constitui oferta de
           serviços, captação de clientela ou promessa de resultado.

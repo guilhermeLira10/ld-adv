@@ -38,7 +38,7 @@ export function ContactSection() {
                   {site.email}
                 </a>
               </li>
-              <li className="text-navy-400">{site.city}</li>
+              <li className="text-navy-300">{site.city}</li>
             </ul>
           </div>
 
@@ -50,7 +50,7 @@ export function ContactSection() {
               compartilhados com terceiros. Você pode solicitar a exclusão a qualquer
               momento pelo e-mail acima.
             </p>
-            <p className="mt-3 text-sm text-navy-400">
+            <p className="mt-3 text-sm text-navy-300">
               Evite enviar documentos ou dados sigilosos por este formulário.
             </p>
           </div>

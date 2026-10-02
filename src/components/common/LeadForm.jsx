@@ -156,7 +156,7 @@ export function LeadForm() {
         {isSubmitting ? 'Enviando…' : 'Solicitar análise do caso'}
       </button>
 
-      <p className="text-xs text-navy-400">
+      <p className="text-xs text-navy-300">
         O envio deste formulário não cria relação advogado-cliente.
       </p>
     </form>

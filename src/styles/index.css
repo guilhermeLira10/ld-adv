@@ -1,5 +1,21 @@
 @import 'tailwindcss';
 
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('../assets/fonts/inter-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: swap;
+  src: url('../assets/fonts/lora-latin.woff2') format('woff2');
+}
+
 /*
   Design tokens do escritório. Tailwind v4 gera as utilities a partir daqui:
   --color-navy-800 vira bg-navy-800, text-navy-800, border-navy-800 etc.
